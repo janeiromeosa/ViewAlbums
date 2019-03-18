@@ -3,6 +3,6 @@ package com.example.viewalbums.net
 const val BASE_URL = "https://jsonplaceholder.typicode.com/"
 const val ENDPOINT = "albums"
 
-const val TABLE_NAME = "viewAlbums"
+const val TABLE_NAME = "albums"
 const val DATABASE_NAME = "AlbumDatabase"
 const val DATABASE_VERSION = 1

@@ -21,7 +21,7 @@ class HomeViewModel: ViewModel(){
 
     private val compositeDisposable: CompositeDisposable = CompositeDisposable()
 
-    fun getArticlesObservable(): LiveData<List<ViewAlbums>> = albumsObservable
+    fun getAlbumsObservable(): LiveData<List<ViewAlbums>> = albumsObservable
 
     private lateinit var repository: DataSource
 
@@ -31,7 +31,12 @@ class HomeViewModel: ViewModel(){
         )
 
         compositeDisposable.add(repository.getAlbumsFromList()
-            .subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread())
-            .subscribe({ Log.d("Album Description", it[0].title)}, {it.printStackTrace()}))
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe({
+                albumsObservable.value = it
+            }, {
+                it.printStackTrace()
+            }))
     }
 }

@@ -30,8 +30,7 @@ class RemoteDataSource: DataSource{
         retrofit.create(AlbumsService::class.java)
     }
     override fun getAlbumsFromList(): Maybe<List<ViewAlbums>> {
-        return albumsService.getAlbums()
-            .flatMapMaybe{Maybe.just(it)}
+        return albumsService.getAlbums().flatMap{Maybe.just(it)}
     }
     override fun addAlbumViews(viewAlbums: ViewAlbums) {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.

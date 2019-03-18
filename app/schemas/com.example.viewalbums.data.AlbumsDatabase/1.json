@@ -2,11 +2,11 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "90e5628a96f6e47ebd78478801e7f811",
+    "identityHash": "0830cb629d213d1650cddf9e6b5d4da8",
     "entities": [
       {
-        "tableName": "viewAlbums",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER NOT NULL, `title` TEXT NOT NULL, `userId` INTEGER NOT NULL, PRIMARY KEY(`userId`))",
+        "tableName": "albums",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER NOT NULL, `title` TEXT NOT NULL, `userId` INTEGER NOT NULL, PRIMARY KEY(`id`))",
         "fields": [
           {
             "fieldPath": "id",
@@ -29,7 +29,7 @@
         ],
         "primaryKey": {
           "columnNames": [
-            "userId"
+            "id"
           ],
           "autoGenerate": false
         },
@@ -39,7 +39,7 @@
     ],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, \"90e5628a96f6e47ebd78478801e7f811\")"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, \"0830cb629d213d1650cddf9e6b5d4da8\")"
     ]
   }
 }

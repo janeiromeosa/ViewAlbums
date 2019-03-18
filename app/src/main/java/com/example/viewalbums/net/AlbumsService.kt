@@ -2,6 +2,7 @@ package com.example.viewalbums.net
 
 import android.renderscript.Script
 import com.example.viewalbums.ViewAlbums
+import io.reactivex.Maybe
 import io.reactivex.Single
 import retrofit2.http.GET
 import retrofit2.http.Path
@@ -11,5 +12,5 @@ import retrofit2.http.Path
 
 interface AlbumsService {
     @GET(ENDPOINT)
-    fun getAlbums(): Single<List<ViewAlbums>>
+    fun getAlbums(): Maybe<List<ViewAlbums>>
 }

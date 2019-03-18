@@ -6,7 +6,7 @@ import io.reactivex.Maybe
 
 @Dao
 interface ViewAlbumsDAO{
-    @Query("SELECT * FROM viewAlbums")
+    @Query("SELECT * FROM albums")
     fun getAllAlbums(): Maybe <List<ViewAlbums>>
 
     @Insert
